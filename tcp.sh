@@ -6,12 +6,10 @@ export PATH
 #	System Required: CentOS 6+,Debian7+,Ubuntu12+
 #	Description: BBR+BBR魔改版+Lotserver
 #	Version: 1.1.3
-#	Author: 千影
-#	Blog: https://www.94ish.me/
 #=================================================
 
 sh_ver="1.1.3"
-github="raw.githubusercontent.com/chiakge/Linux-NetSpeed/master"
+github="raw.githubusercontent.com/sandyliao80/Linux-NetSpeed/master"
 
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
 Info="${Green_font_prefix}[信息]${Font_color_suffix}"
@@ -141,7 +139,7 @@ startbbrmod_nanqinlang(){
 	if [[ "${release}" == "centos" ]]; then
 		yum install -y make gcc
 		mkdir bbrmod && cd bbrmod
-		wget -N --no-check-certificate https://raw.githubusercontent.com/chiakge/tcp_nanqinlang-test/master/tcp_nanqinlang.c
+		wget -N --no-check-certificate https://github.com/sandyliao80/tested/blob/master/tcp_nanqinlang.c
 		echo "obj-m := tcp_nanqinlang.o" > Makefile
 		make -C /lib/modules/$(uname -r)/build M=`pwd` modules CC=/usr/bin/gcc
 		chmod +x ./tcp_nanqinlang.ko
@@ -158,7 +156,7 @@ startbbrmod_nanqinlang(){
 		fi
 		apt-get -y install make gcc-4.9
 		mkdir bbrmod && cd bbrmod
-		wget -N --no-check-certificate https://raw.githubusercontent.com/chiakge/tcp_nanqinlang-test/master/tcp_nanqinlang.c
+		wget -N --no-check-certificate https://github.com/sandyliao80/tested/blob/master/tcp_nanqinlang.c
 		echo "obj-m := tcp_nanqinlang.o" > Makefile
 		make -C /lib/modules/$(uname -r)/build M=`pwd` modules CC=/usr/bin/gcc-4.9
 		install tcp_nanqinlang.ko /lib/modules/$(uname -r)/kernel
@@ -313,7 +311,7 @@ Update_Shell(){
 start_menu(){
 clear
 echo && echo -e " TCP加速 一键安装管理脚本 ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
-  -- 就是爱生活 | 94ish.me --
+  -- aws ubuntu专用版本 --
   
  ${Green_font_prefix}0.${Font_color_suffix} 升级脚本
 ————————————内核管理————————————
@@ -598,4 +596,3 @@ check_sys
 check_version
 [[ ${release} != "debian" ]] && [[ ${release} != "ubuntu" ]] && [[ ${release} != "centos" ]] && echo -e "${Error} 本脚本不支持当前系统 ${release} !" && exit 1
 start_menu
-
