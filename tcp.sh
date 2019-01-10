@@ -139,7 +139,7 @@ startbbrmod_nanqinlang(){
 	if [[ "${release}" == "centos" ]]; then
 		yum install -y make gcc
 		mkdir bbrmod && cd bbrmod
-		wget -N --no-check-certificate https://github.com/sandyliao80/tested/blob/master/tcp_nanqinlang.c
+		wget -N --no-check-certificate https://raw.githubusercontent.com/sandyliao80/tested/master/tcp_nanqinlang.c
 		echo "obj-m := tcp_nanqinlang.o" > Makefile
 		make -C /lib/modules/$(uname -r)/build M=`pwd` modules CC=/usr/bin/gcc
 		chmod +x ./tcp_nanqinlang.ko
@@ -156,7 +156,7 @@ startbbrmod_nanqinlang(){
 		fi
 		apt-get -y install make gcc-4.9
 		mkdir bbrmod && cd bbrmod
-		wget -N --no-check-certificate https://github.com/sandyliao80/tested/blob/master/tcp_nanqinlang.c
+		wget -N --no-check-certificate https://raw.githubusercontent.com/sandyliao80/tested/master/tcp_nanqinlang.c
 		echo "obj-m := tcp_nanqinlang.o" > Makefile
 		make -C /lib/modules/$(uname -r)/build M=`pwd` modules CC=/usr/bin/gcc-4.9
 		install tcp_nanqinlang.ko /lib/modules/$(uname -r)/kernel
