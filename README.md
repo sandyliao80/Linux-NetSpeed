@@ -6,8 +6,8 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/sandyliao80/Li
 
 ### ubuntu18+安装命令:
 
-sudo apt-get update
-wget -N --no-check-certificate "https://raw.githubusercontent.com/sandyliao80/Linux-NetSpeed/master/tcp.sh"
-apt install make gcc -y
-sed -i 's#/usr/bin/gcc-4.9#/usr/bin/gcc#g' '/root/tcp.sh'
-chmod +x tcp.sh && ./tcp.sh
+sudo apt-get update   
+wget -N --no-check-certificate "https://raw.githubusercontent.com/sandyliao80/Linux-NetSpeed/master/tcp.sh"   
+apt install make gcc -y   
+sed -i 's#/usr/bin/gcc-4.9#/usr/bin/gcc#g' '/root/tcp.sh'   
+chmod +x tcp.sh && ./tcp.sh   
